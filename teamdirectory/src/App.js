@@ -1,7 +1,9 @@
+import React from "react";
 import "./App.css";
+import Wrapper from "./components/Wrapper/Wrapper"
 
 function App() {
-  return console.log("hello you've reached App.js!");
+  return <Wrapper />;
 }
 
 export default App;
