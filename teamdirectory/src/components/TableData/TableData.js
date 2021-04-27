@@ -5,7 +5,7 @@ function TableRow(props) {
   console.log("tablerow", props)
   return (
     <tbody>
-      <tr>
+      <tr key={props.key}>
         <td>
         <img className="flex"src={props.picture} alt={props.firstname}></img></td>
         <td className="align-middle">{props.firstname} {props.lastname}</td>

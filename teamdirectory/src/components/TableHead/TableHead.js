@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css"
 import TableRow from "../TableData/TableData";
+import FormatDate from "../../utils/helpers/formatDate";
 
 
 function TableHead ({results}){
@@ -19,12 +20,13 @@ function TableHead ({results}){
         {results.map(result => (
         <TableRow 
         results={results}
+        key={result.id.value}
         picture={result.picture.medium}
         firstname={result.name.first}
         lastname={result.name.last}
         phone={result.phone}
         email={result.email}
-        DOB={result.dob.date}
+        DOB={FormatDate(result.dob.date)}
         />))}
         </table>
 
