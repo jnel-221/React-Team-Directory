@@ -7,11 +7,11 @@ function TableRow(props) {
     <tbody>
       <tr>
         <td>
-        <img src={props.picture} alt={props.firstname}></img></td>
-        <td>{props.firstname} {props.lastname}</td>
-        <td>{props.phone}</td>
-        <td>{props.email}</td>
-        <td>{props.DOB}</td>
+        <img className="flex"src={props.picture} alt={props.firstname}></img></td>
+        <td className="align-middle">{props.firstname} {props.lastname}</td>
+        <td className="align-middle">{props.phone}</td>
+        <td className="align-middle">{props.email}</td>
+        <td className="align-middle">{props.DOB}</td>
       </tr>
     </tbody>
   );
