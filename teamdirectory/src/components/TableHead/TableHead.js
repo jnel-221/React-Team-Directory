@@ -3,7 +3,8 @@ import "./style.css"
 import TableRow from "../TableData/TableData";
 
 
-function TableHead (){
+function TableHead ({results}){
+    console.log("tableHead", results)
     return(
         <table className="table table-striped table-hover">
         <thead>
@@ -15,7 +16,16 @@ function TableHead (){
                 <th scope="col">DOB</th>
             </tr>
         </thead>
-        <TableRow />
+        {results.map(result => (
+        <TableRow 
+        results={results}
+        picture={result.picture.medium}
+        firstname={result.name.first}
+        lastname={result.name.last}
+        phone={result.phone}
+        email={result.email}
+        DOB={result.dob.date}
+        />))}
         </table>
 
     )

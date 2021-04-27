@@ -7,12 +7,13 @@ import API from "../../utils/API";
 
 class TableContainer extends Component {
   state = {
-    result: {},
+    result: [],
   };
 
   componentDidMount(){
-      API.getEmployees().then(res=>this.setState(console.log(res.data.results))).catch(err=>console.log(err));
+      API.getEmployees().then(res=>this.setState({result: res.data.results})).catch(err=>console.log(err));
   }
+
 
   render() {
     return (
@@ -20,7 +21,7 @@ class TableContainer extends Component {
         <Container />
         <Header />
         <NavSearch />
-        <TableHead />
+        <TableHead results={this.state.result}/>
       </>
     );
   }
