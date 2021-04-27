@@ -5,7 +5,6 @@ function TableRow() {
   return (
     <tbody>
       <tr>
-       
         <td>I'm a picture</td>
         <td>Jennifer Nelson</td>
         <td>555-555-5555</td>
