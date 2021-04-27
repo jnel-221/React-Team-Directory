@@ -5,15 +5,16 @@ import Header from "../Header/Header";
 
 class TableContainer extends Component {
     state={
-        result: {},
+        result: "",
     };
 
     render(){
        return( 
-       <Container>
-       <Header></Header>
-
-        </Container>
+           <>
+       <Container />
+       <Header />
+        </>
+        
        );
     }
 

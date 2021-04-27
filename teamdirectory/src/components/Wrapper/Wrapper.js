@@ -2,7 +2,7 @@ import React from "react";
 
 
 function Container (){
-    return <Container fluid="md"></Container>
+    return <div className="container fluid"></div>
 }
 
 export default Container;

@@ -1,9 +1,8 @@
 import React from "react";
-import "./App.css";
-import Wrapper from "./components/Wrapper/Wrapper"
+import TableContainer from "./components/TableContainer/TableContainer";
 
-function App() {
-  return <Wrapper />;
+ function App() {
+  return <TableContainer />;
 }
 
 export default App;
