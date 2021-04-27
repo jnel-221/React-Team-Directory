@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css"
+import TableRow from "../TableData/TableData";
 
 
 function TableHead (){
@@ -14,10 +15,7 @@ function TableHead (){
                 <th scope="col">DOB</th>
             </tr>
         </thead>
-        <tbody>
-
-        </tbody>
-
+        <TableRow />
         </table>
 
     )
