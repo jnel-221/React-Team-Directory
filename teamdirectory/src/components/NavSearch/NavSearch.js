@@ -1,18 +1,17 @@
 import React from "react";
-import Navbar from 'react-bootstrap/Navbar';
-import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
-import Button from 'react/bootstrap/Button';
 import "./style.css";
 
-function NavSearch() {
+function NavSearch(props) {
   return (
-    <Navbar className="bg-light justify-content-center">
-      <Form inline>
-        <FormControl type="text" placeholder="Search" className=" mr-sm-2" />
-        <Button type="submit">Submit</Button>
-      </Form>
-    </Navbar>
+    <div>
+    <nav className="navbar bg-light justify-content-center">
+        <form className="d-flex">
+        <input onChange={props.handleInputChange} value={props.value}
+        className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
+        </form>
+    </nav>
+    <br/>
+    </div>
   );
 }
 
