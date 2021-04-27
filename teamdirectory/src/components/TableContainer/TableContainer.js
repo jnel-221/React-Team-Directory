@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import Container from "../Wrapper/Wrapper";
 import Header from "../Header/Header";
 import NavSearch from "../NavSearch/NavSearch";
+import TableHead from "../TableHead/TableHead";
 
 class TableContainer extends Component {
   state = {
-    result: "",
+    result: {},
   };
 
   render() {
@@ -14,6 +15,7 @@ class TableContainer extends Component {
         <Container />
         <Header />
         <NavSearch />
+        <TableHead />
       </>
     );
   }
