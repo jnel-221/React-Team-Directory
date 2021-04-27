@@ -5,7 +5,7 @@ import FormatDate from "../../utils/helpers/formatDate";
 
 
 function TableHead ({results}){
-    console.log("tableHead", results)
+    
     return(
         <table className="table table-striped table-hover">
         <thead>
@@ -17,10 +17,9 @@ function TableHead ({results}){
                 <th scope="col">DOB</th>
             </tr>
         </thead>
-        {results.map(result => (
+        {results.map((result, index) => (
         <TableRow 
-        results={results}
-        key={result.id.value}
+        index={index}
         picture={result.picture.medium}
         firstname={result.name.first}
         lastname={result.name.last}

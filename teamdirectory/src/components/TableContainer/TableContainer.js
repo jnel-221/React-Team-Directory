@@ -12,7 +12,9 @@ class TableContainer extends Component {
 
   componentDidMount(){
       API.getEmployees().then(res=>this.setState({result: res.data.results})).catch(err=>console.log(err));
-  }
+  };
+
+
 
 
   render() {
@@ -21,8 +23,10 @@ class TableContainer extends Component {
         <Container />
         <Header />
         <NavSearch />
+        <div className="mx-4">
         <TableHead results={this.state.result}/>
-      </>
+        </div>
+    </>
     );
   }
 }
