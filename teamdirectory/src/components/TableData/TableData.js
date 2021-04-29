@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 
 function TableRow(props) {
-  console.log("tablerow", props)
+  // console.log("tablerow", props)
   return (
     <tbody>
       <tr key={props.index}>

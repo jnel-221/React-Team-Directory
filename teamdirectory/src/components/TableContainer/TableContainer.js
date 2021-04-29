@@ -8,7 +8,7 @@ import API from "../../utils/API";
 class TableContainer extends Component {
   state = {
     result: [],
-    name:""
+    name: "",
   };
 
   componentDidMount() {
@@ -17,20 +17,27 @@ class TableContainer extends Component {
       .catch((err) => console.log(err));
   }
 
-  searchEmployees = () => {
-    const searchName = this.state.search.trim();
-    console.log(searchName);
-    // const searchResults= this.result.filter((employee)=> employee.firstname === searchName);
-    // this.setState({'result': searchResults})
-  }
+  // handleInputChange = (event) => {
+  //   const value = event.target.value;
+  //   const name = event.target.name;
+  //   console.log("in handle input change value: ", value, "name ", name)
 
-  handleInputChange = (event) => {
-    const value = event.target.value;
-    const name = event.target.name;
+  //   this.setState({
+  //     [name]: value,
+  //   });
+  // };
 
-    this.setState({
-      [name]: value,
-    });
+  searchEmployees = (event) => {
+    const searchName = event.target.value.trim();
+    console.log("in searchEmployees function", searchName);
+    const unfilteredResult = this.state.result;
+    console.log("unfiltered array ", unfilteredResult);
+
+    const searchResults = unfilteredResult.filter((employee) =>
+      employee.name.first.includes(searchName.toLowerCase()),
+    );
+
+    this.setState({ result: searchResults });
   };
 
   render() {
@@ -38,7 +45,10 @@ class TableContainer extends Component {
       <>
         <Container />
         <Header />
-        <NavSearch />
+        <NavSearch
+          searchEmployees={this.searchEmployees}
+          handleInputChange={this.handleInputChange}
+        />
         <div className="mx-5">
           <TableHead results={this.state.result} />
         </div>
