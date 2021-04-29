@@ -18,28 +18,23 @@ class TableContainer extends Component {
       .catch((err) => console.log(err));
   }
 
-  // handleInputChange = (event) => {
-  //   const value = event.target.value;
-  //   const name = event.target.name;
-
-  //   this.setState({
-  //     [name]: value,
-  //   });
-  // };
-
   searchEmployees = (event) => {
     const searchName = event.target.value.trim().toLowerCase();
-    console.log("in searchEmployees function", searchName);
+    console.log("searchName holds: ", searchName);
     const unfilteredResult = this.state.result;
-    console.log("unfiltered array ", unfilteredResult);
+    console.log("unfilteredResult holds: ", unfilteredResult);
 
-    // const searchResults = unfilteredResult.filter(employee => {
-    //   return employee.name.toLowerCase().includes(searchName)},
-    // );
-
-    // this.setState({ filteredResult: searchResults });
+    const searchResults = unfilteredResult.filter(employee => {
+      let name = employee.name.first.toLowerCase() + employee.name.last.toLowerCase();
+      return name.includes(searchName)},
+    );
+      console.log("filteredResult holds: ",searchResults);
+    this.setState({ filteredResult: searchResults, search: searchName });
   };
 
+  renderTable = () => {
+    if(this.state.search === ""){ return <TableHead results={this.state.result} />} else { return <TableHead results={this.state.filteredResult} />} 
+  }
   //sorting function here
 
   render() {
@@ -49,7 +44,9 @@ class TableContainer extends Component {
         <Header />
         <NavSearch searchEmployees={this.searchEmployees} />
         <div className="mx-5">
-          <TableHead results={this.state.result} />
+          
+          {this.renderTable()}
+          
         </div>
       </>
     );
