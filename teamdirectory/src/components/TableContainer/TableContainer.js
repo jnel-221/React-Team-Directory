@@ -9,7 +9,7 @@ class TableContainer extends Component {
   state = {
     result: [],
     search: "",
-    
+    filteredResult: []
   };
 
   componentDidMount() {
@@ -18,14 +18,14 @@ class TableContainer extends Component {
       .catch((err) => console.log(err));
   }
 
-  handleInputChange = (event) => {
-    const value = event.target.value;
-    const name = event.target.name;
-   
-    this.setState({
-      [name]: value,
-    });
-  };
+  // handleInputChange = (event) => {
+  //   const value = event.target.value;
+  //   const name = event.target.name;
+
+  //   this.setState({
+  //     [name]: value,
+  //   });
+  // };
 
   searchEmployees = (event) => {
     const searchName = event.target.value.trim().toLowerCase();
@@ -47,10 +47,7 @@ class TableContainer extends Component {
       <>
         <Container />
         <Header />
-        <NavSearch
-          value={this.state.search}
-          handleInputChange={this.handleInputChange}
-        />
+        <NavSearch searchEmployees={this.searchEmployees} />
         <div className="mx-5">
           <TableHead results={this.state.result} />
         </div>
