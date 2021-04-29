@@ -17,9 +17,10 @@ function TableHead ({results}){
                 <th scope="col">DOB</th>
             </tr>
         </thead>
-        {results.map((result, index) => (
+        {results.map((result) => (
         <TableRow 
-        index={index}
+        key={result.login.uuid}
+        id={result.login.uuid}
         picture={result.picture.medium}
         firstname={result.name.first}
         lastname={result.name.last}

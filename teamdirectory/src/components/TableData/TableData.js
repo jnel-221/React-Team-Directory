@@ -2,10 +2,10 @@ import React from "react";
 import "./style.css";
 
 function TableRow(props) {
-  // console.log("tablerow", props)
+
   return (
     <tbody>
-      <tr key={props.index}>
+      <tr id={props.id}>
         <td>
         <img className="flex"src={props.picture} alt={props.firstname}></img></td>
         <td className="align-middle">{props.firstname} {props.lastname}</td>
