@@ -9,7 +9,8 @@ class TableContainer extends Component {
   state = {
     result: [],
     search: "",
-    filteredResult: []
+    filteredResult: [],
+    // order: "descend",
   };
 
   componentDidMount() {
@@ -20,34 +21,43 @@ class TableContainer extends Component {
 
   searchEmployees = (event) => {
     const searchName = event.target.value.trim().toLowerCase();
-    console.log("searchName holds: ", searchName);
     const unfilteredResult = this.state.result;
-    console.log("unfilteredResult holds: ", unfilteredResult);
 
-    const searchResults = unfilteredResult.filter(employee => {
-      let name = employee.name.first.toLowerCase() + employee.name.last.toLowerCase();
-      return name.includes(searchName)},
-    );
-      console.log("filteredResult holds: ",searchResults);
+    const searchResults = unfilteredResult.filter((employee) => {
+      let name =
+        employee.name.first.toLowerCase() + employee.name.last.toLowerCase();
+      return name.includes(searchName);
+    });
+
     this.setState({ filteredResult: searchResults, search: searchName });
   };
 
   renderTable = () => {
-    if(this.state.search === ""){ return <TableHead results={this.state.result} />} else { return <TableHead results={this.state.filteredResult} />} 
-  }
-  //sorting function here
-
+    if (this.state.search === "") {
+      return (
+        <TableHead
+          data_order={this.state.order}
+          sortColumns={this.sortColumns}
+          results={this.state.result}
+        />
+      );
+    } else {
+      return (
+        <TableHead
+          data_order={this.state.order}
+          sortColumns={this.sortColumns}
+          results={this.state.filteredResult}
+        />
+      );
+    }
+  };
   render() {
     return (
       <>
         <Container />
         <Header />
         <NavSearch searchEmployees={this.searchEmployees} />
-        <div className="mx-5">
-          
-          {this.renderTable()}
-          
-        </div>
+        <div className="mx-5">{this.renderTable()}</div>
       </>
     );
   }
