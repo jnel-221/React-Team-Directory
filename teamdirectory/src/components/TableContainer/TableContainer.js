@@ -10,7 +10,7 @@ class TableContainer extends Component {
     result: [],
     search: "",
     filteredResult: [],
-    // order: "descend",
+    
   };
 
   componentDidMount() {
@@ -36,16 +36,12 @@ class TableContainer extends Component {
     if (this.state.search === "") {
       return (
         <TableHead
-          data_order={this.state.order}
-          sortColumns={this.sortColumns}
           results={this.state.result}
         />
       );
     } else {
       return (
         <TableHead
-          data_order={this.state.order}
-          sortColumns={this.sortColumns}
           results={this.state.filteredResult}
         />
       );

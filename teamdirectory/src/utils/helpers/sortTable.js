@@ -1,6 +1,6 @@
 import React from "react";
 
-//compiled with assistance from 'Creating Sortable Tables With React': https://www.smashingmagazine.com/2020/03/sortable-tables-react/
+// compiled with assistance from 'Creating Sortable Tables With React': https://www.smashingmagazine.com/2020/03/sortable-tables-react/
 
 const useSortableData = (users, config = !null) => {
   const [sortConfig, setSortConfig] = React.useState(config);

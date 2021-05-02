@@ -51,7 +51,7 @@ function TableHead({ results }) {
           </th>
         </tr>
       </thead>
-      {results.map((result) => (
+      {sortedUsers.map((result) => (
         <TableRow
           key={result.login.uuid}
           id={result.login.uuid}
