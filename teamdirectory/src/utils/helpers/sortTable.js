@@ -4,12 +4,12 @@ import React from "react";
 
 const useSortableData = (users, config = !null) => {
   const [sortConfig, setSortConfig] = React.useState(config);
-  
+
   const sortedUsers = React.useMemo(() => {
     let sortableUsers = [...users];
     if (sortConfig !== null) {
       sortableUsers.sort((a, b) => {
-        if (a[sortConfig.key] < b[sortConfig.key]) { 
+        if (a[sortConfig.key] < b[sortConfig.key]) {
           return sortConfig.direction === "ascending" ? -1 : 1;
         }
         if (a[sortConfig.key] > b[sortConfig.key]) {
@@ -21,16 +21,30 @@ const useSortableData = (users, config = !null) => {
     return sortableUsers;
   }, [users, sortConfig]);
 
-  const requestSort = key => {
+  const requestSort = (key) => {
     console.log("in sortTableJs helper func", key);
-    console.log("sortConfig: ", sortConfig, "sortConfig.key: ", sortConfig.key, "sortConfig.direction: ", sortConfig.direction)
+    console.log(
+      "sortConfig: ",
+      sortConfig,
+      "sortConfig.key: ",
+      sortConfig.key,
+      "sortConfig.direction: ",
+      sortConfig.direction
+    );
     let direction = "ascending";
     if (
       sortConfig &&
       sortConfig.key === key &&
       sortConfig.direction === "ascending"
     ) {
-      console.log("sortConfig: ", sortConfig, "sortConfig.key: ", sortConfig.key, "sortConfig.direction: ", sortConfig.direction)
+      console.log(
+        "sortConfig: ",
+        sortConfig,
+        "sortConfig.key: ",
+        sortConfig.key,
+        "sortConfig.direction: ",
+        sortConfig.direction
+      );
       direction = "descending";
     }
     setSortConfig({ key, direction });

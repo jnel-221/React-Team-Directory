@@ -1,13 +1,13 @@
 import React from "react";
 import "./style.css";
 import TableRow from "../TableData/TableData";
-import FormatDate from "../../utils/helpers/formatDate";
+// import FormatDate from "../../utils/helpers/formatDate";
 import useSortableData from "../../utils/helpers/sortTable";
 
-function TableHead({ results }) {
-  
+function TableHead(props) {
+  console.log("in Tablehead",props)
     const { items: sortedUsers, requestSort, sortConfig } = useSortableData(
-    results
+    props.results
   );
 
   const getClassNamesFor = (name) => {
@@ -28,7 +28,7 @@ function TableHead({ results }) {
         <tr>
           <th scope="col">Image</th>
           <th
-            onClick={() => handleClick("name")}
+            onClick={() => handleClick("firstname")}
             className={getClassNamesFor("name")}
             scope="col"
           >
@@ -53,14 +53,13 @@ function TableHead({ results }) {
       </thead>
       {sortedUsers.map((result) => (
         <TableRow
-          key={result.login.uuid}
-          id={result.login.uuid}
-          picture={result.picture.medium}
-          firstname={result.name.first}
-          lastname={result.name.last}
+          key={result.uuid}
+          id={result.uuid}
+          picture={result.picture}
+          name= {`${result.firstname}  ${result.lastname}`}
           phone={result.phone}
           email={result.email}
-          DOB={FormatDate(result.dob.date)}
+          DOB={result.DOB}
         />
       ))}
     </table>
