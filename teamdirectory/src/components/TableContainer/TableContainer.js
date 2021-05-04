@@ -5,14 +5,17 @@ import NavSearch from "../NavSearch/NavSearch";
 import TableHead from "../TableHead/TableHead";
 import API from "../../utils/API";
 import FormatDate from "../../utils/helpers/formatDate";
+import "./style.css"
 
 class TableContainer extends Component {
+  //set state
   state = {
     result: [],
     search: "",
     filteredResult: [],
   };
 
+  //call API and store data in result array
   componentDidMount() {
     API.getEmployees()
       .then(res => 
@@ -34,6 +37,7 @@ class TableContainer extends Component {
      
   }
   
+  //filter result array by search-box value and store in new array.
   searchEmployees = (event) => {
     const searchName = event.target.value.trim().toLowerCase();
     const unfilteredResult = this.state.result;
@@ -47,6 +51,7 @@ class TableContainer extends Component {
     this.setState({ filteredResult: searchResults, search: searchName });
   };
 
+  //renders table with filtered array or unfiltered array if search results are/are not present.
   renderTable = () => {
     if (this.state.search === "") {
      
@@ -55,13 +60,14 @@ class TableContainer extends Component {
       return <TableHead results={this.state.filteredResult} />;
     }
   };
+
   render() {
     return (
       <>
         <Container />
         <Header />
         <NavSearch searchEmployees={this.searchEmployees} />
-        <div className="mx-5">{this.renderTable()}</div>
+        <div className="usertable table-responsive mx-5">{this.renderTable()}</div>
       </>
     );
   }

@@ -1,4 +1,15 @@
 table {
-    font-family: "Reem Kufi", sans-serif;
-   
+  font-family: "Reem Kufi", sans-serif;
 }
+
+th:hover {
+  cursor: pointer;
+}
+
+.fa-caret-up, .fa-caret-down {
+  color: red;
+  
+}
+
+/* <i class="fas fa-caret-up"></i>
+<i class="fas fa-caret-down"></i> */

@@ -33,7 +33,7 @@ const useSortableData = (users, config = !null) => {
     setSortConfig({ key, direction });
   };
 
-  return { items: sortedUsers, requestSort };
+  return { items: sortedUsers, sortConfig, requestSort };
 };
 
 export default useSortableData;
