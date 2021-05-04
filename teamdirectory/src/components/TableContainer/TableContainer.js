@@ -5,7 +5,7 @@ import NavSearch from "../NavSearch/NavSearch";
 import TableHead from "../TableHead/TableHead";
 import API from "../../utils/API";
 import FormatDate from "../../utils/helpers/formatDate";
-import "./style.css"
+
 
 class TableContainer extends Component {
   //set state
@@ -63,12 +63,12 @@ class TableContainer extends Component {
 
   render() {
     return (
-      <>
+      <div>
         <Container />
         <Header />
         <NavSearch searchEmployees={this.searchEmployees} />
-        <div className="usertable table-responsive mx-5">{this.renderTable()}</div>
-      </>
+        <div className="usertable container-fluid table-responsive">{this.renderTable()}</div>
+      </div>
     );
   }
 }

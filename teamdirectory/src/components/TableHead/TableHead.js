@@ -15,7 +15,6 @@ function TableHead(props) {
       return;
     }
   
-
     return sortConfig.key === name ? sortConfig.direction : undefined;
   };
 
@@ -24,9 +23,10 @@ function TableHead(props) {
   const handleClick = (column) => {
     requestSort(column);
     setSortCategory(column);
-    
+
   };
 
+  //return table
   return (
     <table className="table table-striped table-hover">
       <thead className=".usertable">
