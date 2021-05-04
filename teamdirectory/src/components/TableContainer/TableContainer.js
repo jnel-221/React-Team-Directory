@@ -36,6 +36,7 @@ class TableContainer extends Component {
   
   searchEmployees = (event) => {
     const searchName = event.target.value.trim().toLowerCase();
+    console.log(searchName)
     const unfilteredResult = this.state.result;
     
     const searchResults = unfilteredResult.filter((employee) => {

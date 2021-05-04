@@ -1,11 +1,10 @@
 import React from "react";
 import "./style.css";
 import TableRow from "../TableData/TableData";
-// import FormatDate from "../../utils/helpers/formatDate";
 import useSortableData from "../../utils/helpers/sortTable";
 
 function TableHead(props) {
-  console.log("in Tablehead",props)
+  
     const { items: sortedUsers, requestSort, sortConfig } = useSortableData(
     props.results
   );
@@ -19,7 +18,6 @@ function TableHead(props) {
 
   const handleClick = (column) => {
     requestSort(column);
-    console.log("in handle click ",sortedUsers, column);
   };
 
   return (
@@ -44,7 +42,7 @@ function TableHead(props) {
           scope="col">
             Email
           </th>
-          <th onClick={() => handleClick("dob")} 
+          <th onClick={() => handleClick("DOB")} 
           className={getClassNamesFor("dob")}
           scope="col">
             DOB

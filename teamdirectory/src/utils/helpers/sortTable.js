@@ -1,6 +1,6 @@
 import React from "react";
 
-// compiled with assistance from 'Creating Sortable Tables With React': https://www.smashingmagazine.com/2020/03/sortable-tables-react/
+// custom hook for sorting created with assistance from 'Creating Sortable Tables With React': https://www.smashingmagazine.com/2020/03/sortable-tables-react/
 
 const useSortableData = (users, config = !null) => {
   const [sortConfig, setSortConfig] = React.useState(config);
@@ -22,29 +22,12 @@ const useSortableData = (users, config = !null) => {
   }, [users, sortConfig]);
 
   const requestSort = (key) => {
-    console.log("in sortTableJs helper func", key);
-    console.log(
-      "sortConfig: ",
-      sortConfig,
-      "sortConfig.key: ",
-      sortConfig.key,
-      "sortConfig.direction: ",
-      sortConfig.direction
-    );
     let direction = "ascending";
     if (
       sortConfig &&
       sortConfig.key === key &&
       sortConfig.direction === "ascending"
     ) {
-      console.log(
-        "sortConfig: ",
-        sortConfig,
-        "sortConfig.key: ",
-        sortConfig.key,
-        "sortConfig.direction: ",
-        sortConfig.direction
-      );
       direction = "descending";
     }
     setSortConfig({ key, direction });
