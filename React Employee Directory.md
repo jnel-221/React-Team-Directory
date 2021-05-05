@@ -6,51 +6,36 @@
 
   ## Description
 
-  A dynamic staff directory utilizing React.
+  A dynamic staff directory utilizing React JS.
+
+  View the deployed application [here](https://jnel-221.github.io/React-Team-Directory/)!
   
   ## Table of Contents
   
   - [Installation](#Installation)
   - [Usage](#Usage)
-  - [Credits](#Credits)
-  - [Contributing](#Contributing)
-  - [Test](#Tests)
-  - [Questions](#Questions)
   - [License](#License)
   
   ## Installation
 
   ```bash
-  Clone the repo and save it to your desired location.  In the terminal run NPM I to install dependencies.  Run npm start to start the server and see the app in the browser.
+  Clone the repo and save it to your desired location.  In the terminal run NPM i to install dependencies.  Run npm start to start the server and see the app in the browser.
   ```
 
   [Back to Table of Contents](#table-of-contents)
   
   ## Usage
 
-  Use the search field to search for Employees by name.  Click on the carets to search for employees by name, phone number, email, or DOB.
+  Use the search field to search directory by employee name.  Click on the carets to search for employees by name, phone number, email, or DOB.
+
+ 
+  ![screenshot](./assets/screenshotlg.png)
+
+  ![giph](./assets/reactapp.gif)
+  
 
   [Back to Table of Contents](#table-of-contents)
   
-  ## Credits
-
-  
-
-  [Back to Table of Contents](#table-of-contents)
-  
-  ## Contributing
-  
-  Please review the community standards for contributing to this project, adopted from the [Contributor Covenant](https://www.contributor-covenant.org/).
-
-  [Back to Table of Contents](#table-of-contents)
-  
-  ## Tests
-
-  ```bash
-  No tests at this time.
-  ```
-
-  [Back to Table of Contents](#table-of-contents)
   
   ## Questions
   
@@ -60,6 +45,6 @@
   
   ## License
 
-  This project is licensed under the terms of the MIT license.
+  This project is licensed under the [MIT](license) license.
   
   [Back to Table of Contents](#table-of-contents)
