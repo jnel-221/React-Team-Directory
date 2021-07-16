@@ -6,7 +6,7 @@
 
   ## Description
 
-  A dynamic staff directory utilizing React JS.
+ A well organized, multi-functional staff directory allows both front-line staff and management to easily find and view non-sensitive data about other employees.  From filtering and sorting by name, to sorting by phone number or DOB, this simple directory is an example of clean, user-friendly resource that can be easily adapted to small or large organizations.
 
   View the deployed application [here](https://jnel-221.github.io/React-Team-Directory/)!
   
